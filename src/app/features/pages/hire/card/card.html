@@ -8,12 +8,13 @@
           <span class="text-xl text-blue-dark">UX/UI Designer</span>
         </div>
       </div>
-      <svg class="w-6 h-6 cursor-pointer">
-        <use href="/svgs/favorite.svg"></use>
+      <svg class="w-6 h-6 cursor-pointer" (click)="updateFavorite()">
+        @if(isFavorite()){
+          <use href="/svgs/favorite-filled.svg"></use>
+        }@else{
+          <use href="/svgs/favorite.svg"></use>
+        }
       </svg>
-      <!--              <svg class="w-6 h-6 cursor-pointer">-->
-      <!--                <use href="/svgs/favorite-filled.svg"></use>-->
-      <!--              </svg>-->
     </div>
     <p class="text-xl text-blue-dark">დამწყები დიზაინერი</p>
 
