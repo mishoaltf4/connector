@@ -8,11 +8,10 @@
   --color-blue: #2F4A81;
   --color-blue-dark: #1C2B48;
   --color-connector-white: #E8ECEF;
+  --color-crystal-detail-bg: #00091c8c;
 
   --font-roboto: "Roboto", sans-serif;
   --font-nino: "nino", sans-serif;
-
-  --font-feature: ""
 }
 
 @utility font-case{
@@ -43,8 +42,9 @@ body{
   margin: 0 auto;
 }
 
-
-
+.bg-crystal-blur{
+  background-color: color-mix(in oklab, var(--color-crystal-detail-bg) 45%, transparent);
+}
 
 button{
   cursor: pointer;
