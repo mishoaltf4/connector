@@ -1,0 +1,18 @@
+<header class="w-full h-[103px] fixed top-0 left-0 z-50 backdrop-blur-3xl">
+  <div class="header-inner w-full h-[103px] px-10 flex items-center justify-between">
+    <div class="logo w-50 h-10 bg-[url(/images/connector-logo.svg)] bg-center bg-no-repeat"></div>
+
+    <nav>
+      <ul class="flex items-center gap-8">
+        <li class="font-roboto text-[24px] font-semibold text-blue opacity-75 hover:opacity-100 cursor-pointer" [routerLink]="'/home'" [routerLinkActive]="'opacity-100'">მთავარი</li>
+        <li class="font-roboto text-[24px] font-semibold text-blue opacity-75 hover:opacity-100 cursor-pointer" [routerLink]="'/hire'" [routerLinkActive]="'opacity-100'">დაიქირავე</li>
+        <li class="font-roboto text-[24px] font-semibold text-blue opacity-75 hover:opacity-100 cursor-pointer" [routerLinkActive]="'opacity-100'"  >დასაქმდი</li>
+      </ul>
+    </nav>
+
+    <div class="auth flex items-center gap-6">
+      <button class="px-4 h-10 border border-blue text-blue rounded-[16px] border-[2px] hover:bg-blue hover:text-connector-white font-semibold font-roboto ">რეგისტრაცია</button>
+      <button class="px-4 h-10 bg-blue text-connector-white rounded-[16px] font-semibold font-roboto">ავტორიზაცია</button>
+    </div>
+  </div>
+</header>
