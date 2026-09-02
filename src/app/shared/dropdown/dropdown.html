@@ -1,0 +1,23 @@
+<div class="dropdown w-full h-14 rounded-2xl px-4 text-xl text-blue bg-white relative cursor-pointer transition-all duration-100" [ngClass]="{'rounded-b-none': isDropdownOpen()}" (click)="dropdownStateChanger()" appOutsideClick (clickOutside)="isDropdownOpen.set(false)">
+  <div class="text h-14 flex items-center justify-between">
+    <p>{{selectedData() !== null ? selectedData()?.title : defaultText()}}</p>
+    <svg class="w-6 h-4 flex items-center justify-center rotate-180 transition-all duration-100" [ngClass]="{'!rotate-0': isDropdownOpen()}">
+      <use href="/svgs/row.svg"></use>
+    </svg>
+  </div>
+  @if(isDropdownOpen()){
+    <div class="dropdown-data w-full h-auto bg-white absolute top-14 left-0 max-h-60 rounded-b-2xl flex flex-col overflow-hidden overflow-y-auto z-10">
+      @if(dropdownData().length !== 0){
+        @for(item of dropdownData(); track item.id){
+          <div class="data w-full min-h-10 bg-white border-b-blue-dark border-b flex items-center px-4 hover:bg-blue-dark hover:text-white transition-all duration-100" [ngClass]="{'border-b-0': $last, 'border-t border-t-blue-dark': $first}" (click)="selectData(item)">
+            <span>{{item.title}}</span>
+          </div>
+        }
+      }@else{
+        <div class="empty w-full h-40 flex items-center justify-center">
+          <h3 class="font-bold">მონაცემები ვერ მოიძებნა</h3>
+        </div>
+      }
+    </div>
+  }
+</div>
