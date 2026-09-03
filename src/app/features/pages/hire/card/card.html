@@ -1,11 +1,11 @@
-<div class="card w-full sm:h-51 h-auto bg-white rounded-2xl p-4 flex max-sm:flex-col sm:justify-between gap-4">
+<div class="card w-full sm:min-h-51 h-auto bg-white rounded-2xl p-4 flex max-sm:flex-col sm:justify-between gap-4">
   <div class="left flex flex-col gap-4 w-full">
     <div class="top flex justify-between">
       <div class="profile flex items-center gap-4 h-16">
         <div class="img w-16 h-16 rounded-full bg-blue-dark"></div>
         <div class="text flex-col gap-2 flex">
-          <h3 class="font-bold text-2xl h-5 text-blue-dark">მარიამ დ.</h3>
-          <span class="text-xl text-blue-dark">UX/UI Designer</span>
+          <h3 class="font-bold text-2xl h-5 text-blue-dark">{{profileData().name}}</h3>
+          <span class="text-xl text-blue-dark">{{profileData().profession}}</span>
         </div>
       </div>
       <svg class="w-6 h-6 cursor-pointer" (click)="updateFavorite()">
@@ -16,17 +16,18 @@
         }
       </svg>
     </div>
-    <p class="text-xl text-blue-dark">დამწყები დიზაინერი</p>
+    <p class="text-xl text-blue-dark">{{profileData().description}}</p>
 
     <div class="pros w-full flex items-center gap-4">
-      <span class="pro py-2 px-3 rounded-2xl font-bold bg-[#E6EEFF]">Figma</span>
-      <span class="pro py-2 px-3 rounded-2xl font-bold bg-[#E6EEFF]">adobe illustrator</span>
+      @for (skill of profileData().skills; track $index) {
+        <span class="pro py-2 px-3 rounded-2xl font-bold bg-[#E6EEFF]">{{skill}}</span>
+      }
     </div>
   </div>
 
-  <div class="right w-60 flex flex-col gap-4 text-blue">
+  <div class="right w-full md:w-60 flex flex-col gap-4 text-blue">
     <div class="top font-bold">
-      <p class="text-2xl"> ₾ 2,500 - 3,500</p>
+      <p class="text-2xl"> ₾ {{profileData().salary.min}} - {{profileData().salary.max}}</p>
       <span class="text-[16px]">საშუალო ანაზღაურება</span>
     </div>
     <div class="middle flex flex-col gap-2">
@@ -34,16 +35,16 @@
         <svg class="w-6 h-6">
           <use href="/svgs/verified.svg"></use>
         </svg>
-        <p>ვერიფიცირებული</p>
+        <p>{{profileData().verified ? 'ვერიფიცირებული' : 'არავერიფიცირებული'}}</p>
       </div>
       <div class="flex items-center gap-2">
         <svg class="w-6 h-6">
           <use href="/svgs/star.svg"></use>
         </svg>
-        <span>4.9  (12 პროექტი)</span>
+        <span>{{profileData().rating}} ({{profileData().projects}} პროექტი)</span>
       </div>
     </div>
 
-    <a href="" class="mt-auto font-bold text-[#00236F]">პროფილის ნახვა</a>
+    <a class="mt-auto ml-auto cursor-pointer font-bold flex items-center gap-4 text-[#00236F]">პროფილის ნახვა  <svg class="text-blue-dark w-4 h-4" width="24px" height="20px" viewBox="0 0 24 23" xmlns="http://www.w3.org/2000/svg"><use href="/svgs/arrow-right.svg"></use></svg></a>
   </div>
 </div>

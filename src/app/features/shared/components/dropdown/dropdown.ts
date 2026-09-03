@@ -1,6 +1,6 @@
 import { Component, input, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ClickOutsideDirective } from '../directives/outside-click';
+import { ClickOutsideDirective } from '../../directives/outside-click';
 
 @Component({
   selector: 'connector-dropdown',

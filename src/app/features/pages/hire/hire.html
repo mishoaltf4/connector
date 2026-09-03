@@ -20,7 +20,8 @@
   <div class="container">
     <div class="filter-search__tasks grid grid-cols-[392px_1fr] h-auto gap-6 max-md:grid-cols-1 mt-4 relative">
 
-      <div class="filter row-span-2 h-[auto] w-[392px] bg-[rgba(168,199,231,0.2)] rounded-2xl max-md:order-2 max-md:w-full p-4 flex flex-col gap-5">
+      <div
+        class="filter row-span-2 h-[auto] w-[392px] bg-[rgba(168,199,231,0.2)] rounded-2xl max-md:order-2 max-md:w-full p-4 flex flex-col gap-5">
 
         <div class="flex items-center justify-between h-10">
           <h3 class="font-bold text-blue-dark text-[32px] h-9">ფილტრი</h3>
@@ -38,11 +39,11 @@
 
         <div class="flex flex-col gap-2">
           <h3 class="font-bold text-blue-dark text-2xl h-6">დასაქმების ტიპი</h3>
-          <connector-dropdown [dropdownData]="dropdownData()" [defaultText]="'ყველა ტიპი'"/>
+          <connector-dropdown [dropdownData]="dropdownData()" [defaultText]="'ყველა ტიპი'" />
         </div>
         <div class="flex flex-col gap-2">
           <h3 class="font-bold text-blue-dark text-2xl h-6">დასაქმების სფერო</h3>
-          <connector-dropdown [dropdownData]="dropdownData()" [defaultText]="'ყველა სფერო'"/>
+          <connector-dropdown [dropdownData]="dropdownData()" [defaultText]="'ყველა სფერო'" />
         </div>
         <div class="line w-full h-[1px] bg-[#007AFF]"></div>
 
@@ -98,11 +99,15 @@
       </div>
 
       <div class="cards col-start-2 max-md:col-start-1 max-md:order-3 w-full md:absolute md:top-19 flex flex-col gap-4">
-        <app-card />
-        <app-card />
-        <app-card />
+        @for (item of profileCardData() | slice:startDisplayingDataFrom():endDisplayingDataTo(); track $index; ) {
+          <app-card [profileData]="item" />
+        }
       </div>
     </div>
+
+    <app-paginator [dataPerPage]="3"
+                   [dataMaxLength]="profileCardData().length"
+                   (currentPageChange)="onPageChange($event)" />
 
     <div class="categories flex flex-col gap-4 mt-6">
       <div class="flex items-center justify-between">
@@ -110,7 +115,7 @@
           <h3 class="font-bold text-blue-dark text-2xl h-6">კატეგორიები</h3>
           <p class="text-[16px] text-blue">აირჩიეთ სფერო თქვენი პროექტისთვის</p>
         </div>
-        <p class="text-[16px] text-blue">ყველა კატეგორიის ნახვა</p>
+        <p class="text-[16px] text-blue flex items-center gap-2">ყველა კატეგორია <svg class="text-blue-dark w-4 h-4" width="24px" height="20px" viewBox="0 0 24 23" xmlns="http://www.w3.org/2000/svg"><use href="/svgs/arrow-right.svg"></use></svg></p>
       </div>
       <div class="categories-boxes w-full grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-6">
         <div class="category w-full h-60 bg-blue rounded-2xl relative">
@@ -132,7 +137,11 @@
           </div>
         </div>
         <div class="w-full h-60 bg-[#EFF4FF] rounded-2xl flex flex-col gap-3 items-center justify-center">
-          <div class="icon w-13 h-13 rounded-full bg-[rgba(0,35,111,0.1)]"></div>
+          <div class="icon w-13 h-13 rounded-full bg-[rgba(0,35,111,0.1)] flex items-center justify-center">
+            <svg class="text-blue-dark w-7 h-7" width="20px" height="20px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <use href="/svgs/polar.svg"></use>
+            </svg>
+          </div>
           <p class="font-medium">+15 სხვა კატეგორია</p>
         </div>
       </div>
@@ -149,7 +158,8 @@
               <p class="font-bold text-blue-dark text-xl h-4">გიორგი მ.</p>
               <span class="text-blue-dark text-xl">Full Stack Developer</span>
             </div>
-            <div class="rating px-2 h-9 bg-[rgba(47,74,129,0.7)] rounded-[8px] ml-auto mb-auto flex items-center gap-2 text-white">
+            <div
+              class="rating px-2 h-9 bg-[rgba(47,74,129,0.7)] rounded-[8px] ml-auto mb-auto flex items-center gap-2 text-white">
               <svg class="text-white" width="20px" height="20px" viewBox="0 0 24 23" xmlns="http://www.w3.org/2000/svg">
                 <use href="/svgs/star.svg"></use>
               </svg>
@@ -168,7 +178,7 @@
             </div>
           </div>
 
-          <a class="text-[18px] font-bold text-[#00236F] mt-auto ml-auto">პროფილის ნახვა</a>
+          <a class="text-[18px] font-bold text-[#00236F] mt-auto ml-auto flex items-center gap-2">პროფილის ნახვა <svg class="text-blue-dark w-4 h-4" width="24px" height="20px" viewBox="0 0 24 23" xmlns="http://www.w3.org/2000/svg"><use href="/svgs/arrow-right.svg"></use></svg></a>
         </div>
         <div class="card p-4 w-full min-h-[279px] h-auto rounded-2xl bg-[#EFF4FF] flex flex-col gap-4">
           <div class="profile flex items-center gap-4">
@@ -177,7 +187,8 @@
               <p class="font-bold text-blue-dark text-xl h-4">გიორგი მ.</p>
               <span class="text-blue-dark text-xl">Full Stack Developer</span>
             </div>
-            <div class="rating px-2 h-9 bg-[rgba(47,74,129,0.7)] rounded-[8px] ml-auto mb-auto flex items-center gap-2 text-white">
+            <div
+              class="rating px-2 h-9 bg-[rgba(47,74,129,0.7)] rounded-[8px] ml-auto mb-auto flex items-center gap-2 text-white">
               <svg class="text-white" width="20px" height="20px" viewBox="0 0 24 23" xmlns="http://www.w3.org/2000/svg">
                 <use href="/svgs/star.svg"></use>
               </svg>
@@ -196,7 +207,7 @@
             </div>
           </div>
 
-          <a class="text-[18px] font-bold text-[#00236F] mt-auto ml-auto">პროფილის ნახვა</a>
+          <a class="text-[18px] font-bold text-[#00236F] mt-auto ml-auto flex items-center gap-2">პროფილის ნახვა <svg class="text-blue-dark w-4 h-4" width="24px" height="20px" viewBox="0 0 24 23" xmlns="http://www.w3.org/2000/svg"><use href="/svgs/arrow-right.svg"></use></svg></a>
         </div>
         <div class="card p-4 w-full min-h-[279px] h-auto rounded-2xl bg-[#EFF4FF] flex flex-col gap-4">
           <div class="profile flex items-center gap-4">
@@ -205,7 +216,8 @@
               <p class="font-bold text-blue-dark text-xl h-4">გიორგი მ.</p>
               <span class="text-blue-dark text-xl">Full Stack Developer</span>
             </div>
-            <div class="rating px-2 h-9 bg-[rgba(47,74,129,0.7)] rounded-[8px] ml-auto mb-auto flex items-center gap-2 text-white">
+            <div
+              class="rating px-2 h-9 bg-[rgba(47,74,129,0.7)] rounded-[8px] ml-auto mb-auto flex items-center gap-2 text-white">
               <svg class="text-white" width="20px" height="20px" viewBox="0 0 24 23" xmlns="http://www.w3.org/2000/svg">
                 <use href="/svgs/star.svg"></use>
               </svg>
@@ -224,7 +236,7 @@
             </div>
           </div>
 
-          <a class="text-[18px] font-bold text-[#00236F] mt-auto ml-auto">პროფილის ნახვა</a>
+          <a class="text-[18px] font-bold text-[#00236F] mt-auto ml-auto flex items-center gap-2">პროფილის ნახვა <svg class="text-blue-dark w-4 h-4" width="24px" height="20px" viewBox="0 0 24 23" xmlns="http://www.w3.org/2000/svg"><use href="/svgs/arrow-right.svg"></use></svg></a>
         </div>
       </div>
     </div>
