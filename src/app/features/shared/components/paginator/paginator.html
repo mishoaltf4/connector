@@ -1,0 +1,11 @@
+<div class="paginator w-full h-10 flex items-center justify-center gap-2 mt-11">
+  <button (click)="prevPage()" class="w-10 h-10"><</button>
+  <div class="pages flex items-center gap-2">
+    @for (i of [].constructor(totalPages()); track $index) {
+      <button class="page w-10 h-10 rounded-[8px] text-blue-dark flex items-center justify-center cursor-pointer"
+           (click)="selectPage($index + 1)" [ngClass]="{'bg-blue-dark text-white': $index + 1 === currentPage()}">
+        <span>{{ $index + 1 }}</span></button>
+    }
+  </div>
+  <button (click)="nextPage()" class="w-10 h-10">></button>
+</div>
