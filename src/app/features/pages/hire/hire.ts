@@ -1,13 +1,14 @@
 import { Component, signal, SimpleChanges } from '@angular/core';
 import { Dropdown } from '../../shared/components/dropdown/dropdown';
 import { Checkbox } from '../../shared/components/checkbox/checkbox';
+import { Popup } from '../../shared/components/popup/popup';
 import { Card } from './card/card';
 import { Paginator } from '../../shared/components/paginator/paginator';
 import { SlicePipe } from '@angular/common';
 
 @Component({
   selector: 'app-hire',
-  imports: [Dropdown, Checkbox, Card, Paginator, SlicePipe],
+  imports: [Dropdown, Checkbox, Card, Paginator, SlicePipe, Popup],
   templateUrl: './hire.html',
   styleUrl: './hire.css',
 })
@@ -210,6 +211,8 @@ export class Hire {
     },
   ]);
 
+  protected isShownProfilePopup = signal<boolean>(false);
+
   protected onPageChange(page: number) {
     this.currentPage.set(page);
     if (page === 1) {
@@ -219,6 +222,10 @@ export class Hire {
     this.startDisplayingDataFrom.set(3 * (page - 1));
     this.endDisplayingDataTo.set(3 * page);
     console.log(this.currentPage());
+  }
+
+  public showPopup(e: any): void{
+    this.isShownProfilePopup.set(true);
   }
 }
 
