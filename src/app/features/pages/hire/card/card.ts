@@ -1,4 +1,4 @@
-import { Component, input, signal } from '@angular/core';
+import { Component, input, output, signal } from '@angular/core';
 import { ProfileCard } from '../hire';
 
 @Component({
@@ -9,9 +9,14 @@ import { ProfileCard } from '../hire';
 })
 export class Card {
   public profileData = input.required<ProfileCard>()
+  public action = output();
   protected isFavorite = signal<boolean>(false);
 
   protected updateFavorite():void{
     this.isFavorite.update((val) => !val);
+  }
+
+  protected showPopup(){
+    this.action.emit();
   }
 }

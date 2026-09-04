@@ -1,0 +1,9 @@
+<div
+  class="popup backdrop-blur-[21px] w-full h-screen z-50 fixed left-0 top-0 flex items-center justify-center pt-20 pb-10"
+>
+  <div class="container overflow-y-auto h-full">
+    <div [class]="'popup-inner  ' + setClasses().wraperEl">
+      <ng-content></ng-content>
+    </div>
+  </div>
+</div>
