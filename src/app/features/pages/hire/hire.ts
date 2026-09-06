@@ -8,7 +8,7 @@ import { SlicePipe } from '@angular/common';
 
 @Component({
   selector: 'app-hire',
-  imports: [Dropdown, Checkbox, Card, Paginator, SlicePipe, Popup],
+  imports: [Dropdown, Checkbox, Card, Paginator, SlicePipe, Popup, ],
   templateUrl: './hire.html',
   styleUrl: './hire.css',
 })
