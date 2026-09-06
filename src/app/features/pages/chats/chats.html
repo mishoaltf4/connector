@@ -1,0 +1,151 @@
+<div class="chats w-full h-full bg-[#E8ECEF] h-screen flex relative" xmlns="http://www.w3.org/1999/html">
+  <div class="left z-10 min-w-100 h-full bg-white border-r border-r-gray-300 border-t-gray-300 py-4 px-6 flex flex-col gap-4 relative">
+    <h3 class="text-blue-dark">შეტყობინებები</h3>
+
+    <input type="text" class="w-full h-14 rounded-2xl bg-[#E8ECEF] px-4" placeholder="მოძებნე ფრილანსერი">
+
+    <div class="last flex items-center justify-between">
+      <p class="text-lg font-regular font-case text-blue">ბოლო საუბრები</p>
+      <div class="icon">
+        <svg class="w-6 h-6 text-blue" viewBox="0 0 24 24">
+          <use href="/svgs/add.svg"></use>
+        </svg>
+      </div>
+    </div>
+
+    <div class="users flex flex-col gap-4">
+      <div class="user w-full h-18 rounded-2xl bg-[#E8ECEF] flex items-center gap-4 px-4 py-4">
+        <div class="img w-10 h-10 rounded-full bg-red-700"></div>
+        <div class="text flex flex-col">
+          <h5 class="text-lg text-blue-dark">მარიამ დანელია</h5>
+          <p class="text-sm font-regular">წერს . . .</p>
+        </div>
+        <div class="time ml-auto mb-auto text-sm font-regular">11:54</div>
+      </div>
+      <div class="user w-full h-18 rounded-2xl bg-none flex items-center gap-4 px-4 py-4">
+        <div class="img w-10 h-10 rounded-full bg-red-700"></div>
+        <div class="text flex flex-col">
+          <h5 class="text-lg text-blue-dark">მარიამ დანელია</h5>
+          <p class="text-sm font-regular">წერს . . .</p>
+        </div>
+        <div class="time ml-auto mb-auto text-sm font-regular">11:54</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="middle w-full h-full flex flex-col relative">
+    <div class="top fixed z-10 left-100 w-[calc(100%_-_800px)] h-19 bg-white border border-gray-300 border-l-0 border-r-0 flex items-center justify-between px-6">
+      <div class="left flex items-center gap-4">
+        <div class="img w-10 h-10 rounded-full bg-red-700"></div>
+        <div class="text flex flex-col gap-1">
+          <h5 class="text-lg font-bold">მარიამ დანელია</h5>
+          <p class="text-sm font-regular text-blue-dark">ონლაინ</p>
+        </div>
+      </div>
+      <div class="right flex items-center gap-4">
+        <div class="icon w-8 h-8 rounded-full border border-[rgba(47,74,129,0.8)] flex items-center justify-center">
+          <svg class="text-blue w-4.5 h-4.5" viewBox="0 0 18 18">
+            <use href="/svgs/phone.svg"></use>
+          </svg>
+        </div>
+        <div class="icon w-8 h-8 rounded-full border border-[rgba(47,74,129,0.8)] flex items-center justify-center">
+          <svg class="text-blue w-1 h-4.5">
+            <use href="/svgs/dots.svg"></use>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="middle h-auto overflow-y-auto w-full mt-19 pt-8 mb-47 relative flex flex-col gap-8 px-6">
+      <span class="today text-center mx-auto p-2 border font-bold border-blue-light rounded-2xl text-blue-dark">დღეს</span>
+
+      <div class="message ml-auto max-w-1/2 w-auto flex flex-col gap-1">
+        <div class="text w-full h-auto p-4 bg-white rounded-2xl rounded-br-none">
+          <span class="text-[16px] text-blue-dark font-regular">გამარჯობა, მსურს თქვენთან თანამშრომლობა!</span>
+        </div>
+        <div class="time ml-auto">
+          <span class="">10:57</span>
+        </div>
+      </div>
+      <div class="message max-w-1/2 mr-auto w-auto flex flex-col gap-1">
+        <div class="text w-auto h-auto p-4 bg-[rgba(0,122,255,0.18)] rounded-2xl rounded-bl-none">
+          <span class="text-[16px] text-blue-dark font-regular">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid animi assumenda, dolorem dolorum et eum expedita iure molestias, mollitia neque obcaecati, pariatur quam rem reprehenderit sapiente sed tenetur voluptatem. Atque aut cumque deserunt dolor, eius explicabo nihil nisi pariatur praesentium, quis quod sed. Dolores, nesciunt. ♥</span>
+        </div>
+        <div class="time">
+          <span class="">10:57</span>
+        </div>
+      </div>
+      <button class="px-2 py-3 bg-blue text-white w-auto mx-auto rounded-2xl font-medium font-case flex items-center gap-2"><svg class="w-6 h-6"><use href="/svgs/contract.svg"></use></svg> კონტრაქტის გაგზავნა</button>
+    </div>
+
+    <div class="bottom fixed bottom-0 z-10 w-[calc(100%_-_800px)] border-t border-t-gray-300 min-h-22 h-auto bg-white px-6 py-4">
+      <div class="textarea relative">
+        <textarea class="w-full h-auto min-h-12 rounded-2xl bg-[#E8ECEF] px-4 border border-blue"></textarea>
+        <div class="box w-10 h-10 bg-white absolute right-4 top-1 rounded-lg flex items-center justify-center">
+          <svg class="text-blue w-6 h-6" viewBox="0 0 24 24">
+            <use href="/svgs/send.svg"></use>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="right z-10 min-w-100 h-full border-l border-l-gray-300 relative bg-white px-6 py-4 flex flex-col gap-6">
+    <h3 class="text-blue-dark">ფაილები</h3>
+
+    <div class="user flex flex-col gap-2 items-center">
+      <div class="img w-16 h-16 rounded-full bg-red-700"></div>
+      <div class="text flex flex-col items-center">
+        <h4>მარიამ დანელია</h4>
+        <p class="text-[16px] font-regular text-blue-dark">Junior UX / UI Designer</p>
+      </div>
+    </div>
+
+    <div class="border-b border-blue-dark"></div>
+
+    <div class="files flex flex-col gap-2">
+      <div class="top flex items-center justify-between">
+        <span class="text-lg font-regular text-blue-dark">ფაილის ტიპი</span>
+          <svg class="text-blue w-1.5 h-4.5">
+          <use href="/svgs/dots.svg"></use>
+        </svg>
+      </div>
+
+      <div class="flex flex-col gap-4">
+        <div class="w-full h-10 flex items-center justify-between">
+          <div class="context flex items-center gap-2">
+            <div class="icon w-10 h-10 rounded-lg bg-blue-light"></div>
+            <h5 class="">დოკუმენტები</h5>
+          </div>
+          <div class="icon">
+            <svg class="w-6.5 h-5 text-blue-dark" viewBox="0 0 26 20">
+              <use href="/svgs/arrow-right.svg"></use>
+            </svg>
+          </div>
+        </div>
+        <div class="w-full h-10 flex items-center justify-between">
+          <div class="context flex items-center gap-2">
+            <div class="icon w-10 h-10 rounded-lg bg-blue-light"></div>
+            <h5 class="">ფოტოები</h5>
+          </div>
+          <div class="icon">
+            <svg class="w-6.5 h-5 text-blue-dark" viewBox="0 0 26 20">
+              <use href="/svgs/arrow-right.svg"></use>
+            </svg>
+          </div>
+        </div>
+        <div class="w-full h-10 flex items-center justify-between">
+          <div class="context flex items-center gap-2">
+            <div class="icon w-10 h-10 rounded-lg bg-blue-light"></div>
+            <h5 class="">სხვა</h5>
+          </div>
+          <div class="icon">
+            <svg class="w-6.5 h-5 text-blue-dark" viewBox="0 0 26 20">
+              <use href="/svgs/arrow-right.svg"></use>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

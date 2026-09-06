@@ -36,25 +36,25 @@
         class="filter row-span-2 h-[auto] w-[392px] bg-[rgba(168,199,231,0.2)] rounded-2xl max-md:order-2 max-md:w-full p-4 flex flex-col gap-5"
       >
         <div class="flex items-center justify-between h-10">
-          <h3 class="font-bold text-blue-dark text-[32px] h-9">ფილტრი</h3>
-          <p class="font-normal text-blue-dark text-2xl">გასუფთავება</p>
+          <h1 class="font-bold text-blue-dark">ფილტრი</h1>
+          <p class="font-regular text-blue-dark text-xl">გასუფთავება</p>
         </div>
 
         <div class="line w-full h-[1px] bg-[#007AFF]"></div>
 
         <div class="flex items-center gap-2">
           <connector-checkbox />
-          <h3 class="font-bold text-blue-dark text-2xl h-6">ჩემი ფავორიტები</h3>
+          <h3 class="!font-bold text-blue-dark text-2xl">ჩემი ფავორიტები</h3>
         </div>
 
         <div class="line w-full h-[1px] bg-[#007AFF]"></div>
 
         <div class="flex flex-col gap-2">
-          <h3 class="font-bold text-blue-dark text-2xl h-6">დასაქმების ტიპი</h3>
+          <h3 class="font-bold text-blue-dark text-2xl">დასაქმების ტიპი</h3>
           <connector-dropdown [dropdownData]="dropdownData()" [defaultText]="'ყველა ტიპი'" />
         </div>
         <div class="flex flex-col gap-2">
-          <h3 class="font-bold text-blue-dark text-2xl h-6">დასაქმების სფერო</h3>
+          <h3 class=" text-blue-dark text-2xl">დასაქმების სფერო</h3>
           <connector-dropdown [dropdownData]="dropdownData()" [defaultText]="'ყველა სფერო'" />
         </div>
         <div class="line w-full h-[1px] bg-[#007AFF]"></div>
@@ -375,6 +375,7 @@
     [setClasses]="{
       wraperEl: 'w-full h-auto p-6 rounded-2xl bg-[rgba(255,255,255,0.8)] flex flex-col gap-6',
     }"
+    (closePopup)="isShownProfilePopup.set(false)"
   >
     <ng-content>
       <div
@@ -396,11 +397,11 @@
             class="img absolute -bottom-12 left-8 w-24 h-24 bg-red-700 rounded-full border-8 border-white"
           ></div>
         </div>
-  
+
         <div class="info grid gird-cols-1 md:grid-cols-3 mt-16 p-4 max-md:gap-2">
           <div class="user flex flex-col gap-2">
             <h3>მარიამ დანელია</h3>
-            <p class="font-semibold text-lg leading-[17px]">Junior UX / UI Designer</p>
+            <p class="font-semibold text-lg">Junior UX / UI Designer</p>
             <span class="text-[16px]">თბილისი , საქართველო</span>
           </div>
           <div class="salary flex flex-col md:items-center gap-2">
@@ -417,11 +418,11 @@
             >
               <use href="/svgs/star.svg"></use>
             </svg>
-            <p class="text-lg leading-[25px]">4.9 (12 პროექტი)</p>
+            <p class="text-lg">4.9 (12 პროექტი)</p>
           </div>
         </div>
       </div>
-  
+
       <div
         class="about-us__verified w-full h-auto min-h-30 grid grid-cols-1 gap-6 md:grid-cols-[80%_1fr]"
       >
@@ -455,7 +456,7 @@
           </div>
         </div>
       </div>
-  
+
       <div class="w-full h-auto min-h-70 grid grid-cols-1 gap-6 md:grid-cols-[80%_1fr]">
         <div
           class="w-full h-full bg-white rounded-2xl profile-card__shadow p-4 flex flex-col gap-4 md:justify-between"
@@ -464,38 +465,38 @@
             <h4>უნარები</h4>
             <div class="flex items-center gap-6 max-md:flex-col">
               <span
-                class="py-2 px-4 border border-blue-light rounded-2xl font-semibold text-lg text-blue-dark leading-4.5 max-md:w-full text-center"
+                class="py-2 px-4 border border-blue-light rounded-2xl font-semibold text-lg text-blue-dark max-md:w-full text-center"
                 >figma</span
               >
               <span
-                class="py-2 px-4 border border-blue-light rounded-2xl font-semibold text-lg text-blue-dark leading-4.5 max-md:w-full text-center"
+                class="py-2 px-4 border border-blue-light rounded-2xl font-semibold text-lg text-blue-dark max-md:w-full text-center"
                 >adobe photoshop</span
               >
               <span
-                class="py-2 px-4 border border-blue-light rounded-2xl font-semibold text-lg text-blue-dark leading-4.5 max-md:w-full text-center"
+                class="py-2 px-4 border border-blue-light rounded-2xl font-semibold text-lg text-blue-dark max-md:w-full text-center"
                 >adobe illustrator</span
               >
             </div>
           </div>
-  
+
           <div class="flex flex-col gap-2">
             <h4>ენები</h4>
             <div class="flex items-center gap-6 max-md:flex-col">
               <span
-                class="py-2 px-4 border border-blue-light rounded-2xl font-semibold text-lg text-blue-dark leading-4.5 max-md:w-full text-center"
+                class="py-2 px-4 border border-blue-light rounded-2xl font-semibold text-lg text-blue-dark max-md:w-full text-center"
                 >figma</span
               >
               <span
-                class="py-2 px-4 border border-blue-light rounded-2xl font-semibold text-lg text-blue-dark leading-4.5 max-md:w-full text-center"
+                class="py-2 px-4 border border-blue-light rounded-2xl font-semibold text-lg text-blue-dark max-md:w-full text-center"
                 >adobe photoshop</span
               >
               <span
-                class="py-2 px-4 border border-blue-light rounded-2xl font-semibold text-lg text-blue-dark leading-4.5 max-md:w-full text-center"
+                class="py-2 px-4 border border-blue-light rounded-2xl font-semibold text-lg text-blue-dark max-md:w-full text-center"
                 >adobe illustrator</span
               >
             </div>
           </div>
-  
+
           <div class="flex flex-col gap-2">
             <h4>სასურველი სამუშაო გრაფიკი</h4>
             <div class="flex items-center gap-6">
@@ -513,43 +514,43 @@
           <button class="w-full h-12.5 bg-blue text-white rounded-2xl font-bold">დაეკონტაქტე</button>
         </div>
       </div>
-  
+
       <div class="w-full h-auto p-4 rounded-2xl profile-card__shadow bg-white flex flex-col gap-4">
         <h4>განათლება</h4>
-  
+
         <div class="flex flex-col gap-1">
           <h4>გამოცდილება</h4>
           <span class="text-lg text-blue-dark">საქართველოს უნივერსიტეტი</span>
           <span class="text-lg text-blue">სექტემბერი 2023 - ამჟამად</span>
         </div>
-  
+
         <div class="line w-4/5 h-[1px] bg-blue"></div>
-  
+
         <div class="flex flex-col gap-1">
           <h4>ფსიქოლოგია</h4>
           <span class="text-lg text-blue-dark">საქართველოს უნივერსიტეტი</span>
           <span class="text-lg text-blue">სექტემბერი 2023 - ამჟამად</span>
         </div>
       </div>
-  
+
       <div class="w-full h-auto p-4 rounded-2xl profile-card__shadow bg-white flex flex-col gap-4">
         <h4>განათლება</h4>
-  
+
         <div class="flex flex-col gap-1">
           <h4>ფსიქოლოგია</h4>
           <span class="text-lg text-blue-dark">საქართველოს უნივერსიტეტი</span>
           <span class="text-lg text-blue">სექტემბერი 2023 - ამჟამად</span>
         </div>
-  
+
         <div class="line w-4/5 h-[1px] bg-blue"></div>
-  
+
         <div class="flex flex-col gap-1">
           <h4>ფსიქოლოგია</h4>
           <span class="text-lg text-blue-dark">საქართველოს უნივერსიტეტი</span>
           <span class="text-lg text-blue">სექტემბერი 2023 - ამჟამად</span>
         </div>
       </div>
-  
+
       <div class="w-full h-auto p-4 rounded-2xl profile-card__shadow bg-white flex flex-col gap-4">
         <div class="flex items-center justify-between">
           <p class="text-xl font-bold text-blue">დამატებითი URL</p>
